@@ -56,6 +56,32 @@ python day1_page_summarizer.py
   `gpt-4.1-mini` via the OpenAI Chat Completions API.
 - `display_summary(url)` prints the result.
 
+## Running in Jupyter Notebook or Google Colab
+
+This script is written for the command line and prints plain text. If you'd
+rather run it in a **Jupyter Notebook** or **Google Colab**, you can render the
+summary as nicely formatted Markdown instead. Install IPython and add these
+imports:
+
+```bash
+pip install ipython
+```
+
+```python
+from IPython.display import Markdown, display
+```
+
+Then display the summary as Markdown instead of printing it:
+
+```python
+def display_summary(url):
+    summary = summarize(url)
+    display(Markdown(summary))
+```
+
+These imports are **only** needed in a notebook environment — the standard
+command-line script does not require them.
+
 ## Notes
 
 - Page content is capped at 2,000 characters to keep requests small and cheap.
