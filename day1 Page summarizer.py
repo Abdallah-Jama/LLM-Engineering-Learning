@@ -67,7 +67,8 @@ def display_summary(url):
     summary = summarize(url)
     print(summary)
 
-display_summary("https://edwarddonner.com")
+# display_summary("https://edwarddonner.com")
+display_summary("https://dahabshiil.com")
 
 
 # You can try it by runing: display_summary("website_url_here")
