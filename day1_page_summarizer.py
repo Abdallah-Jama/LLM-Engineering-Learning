@@ -1,9 +1,9 @@
 # imports
 
 import os
+import sys
 from dotenv import load_dotenv
 from scraper import fetch_website_contents
-from IPython.display import Markdown, display
 from openai import OpenAI
 
 
@@ -67,8 +67,8 @@ def display_summary(url):
     summary = summarize(url)
     print(summary)
 
-# display_summary("https://edwarddonner.com")
-display_summary("https://dahabshiil.com")
-
-
-# You can try it by runing: display_summary("website_url_here")
+if __name__ == "__main__":
+    # Usage: python day1_page_summarizer.py <website_url>
+    # Falls back to a default URL if none is provided.
+    url = sys.argv[1] if len(sys.argv) > 1 else "https://dahabshiil.com"
+    display_summary(url)
